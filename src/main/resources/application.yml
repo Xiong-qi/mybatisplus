@@ -28,5 +28,6 @@ mybatis-plus:
     cache-enabled: true
 logging:
   config: classpath:logback.xml
+  level.com.xq.mybatisplus: debug
 
 
