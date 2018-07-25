@@ -1,6 +1,7 @@
 package com.xq.mybatisplus.demo.bean;
 
 
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
@@ -22,5 +23,7 @@ public class Employee  {
 
     private Integer age;
 
+    @TableField(exist = false)
+    private Double money;
 
 }
