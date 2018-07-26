@@ -15,8 +15,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
+import static org.mockito.internal.util.collections.ListUtil.filter;
 
 
 @RunWith(SpringRunner.class)
@@ -102,7 +105,9 @@ public class baseCREDTests {
         //分页查询
         List<Employee> employees = employeeMapper.selectPage(new Page<>(2, 2), null);
 
-        employees.forEach(employee -> System.out.println(employee));
+        employees.forEach(employee -> {
+            System.out.println(employee.getLastName());
+        });
     }
 
     /**
@@ -119,8 +124,29 @@ public class baseCREDTests {
         employee.setGender("0");
         employee.setLastName("tt");
 
-        Integer integer = employeeMapper.updateById(employee);
-        System.out.println(integer);
+      /*  ArrayList<Integer> StringList1 = new ArrayList<>();
+        StringList1.add(1);
+        StringList1.add(3);
+        StringList1.add(5);
+
+        ArrayList<Integer> StringList2 = new ArrayList<>();
+        StringList1.add(1);
+        StringList1.add(4);
+        StringList1.add(6);
+        StringList1.forEach(str1->{
+            StringList2.forEach(str2->{
+                if (str1==str2) {
+                    System.out.println(str2);
+                }
+            });
+        });*/
+
+      List<String> fruit = Arrays.asList("香蕉", "哈密瓜", "榴莲", "火龙果", "水蜜桃");
+        List<String> newFruit = filter(fruit, (s) -> s.length() != 2);
+
+        System.out.println(newFruit);
+        /*Integer integer = employeeMapper.updateById(employee);
+        System.out.println(integer);*/
 
     }
 
