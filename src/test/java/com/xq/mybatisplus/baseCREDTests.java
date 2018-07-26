@@ -180,10 +180,10 @@ public class baseCREDTests {
     @Test
     public void testInsertKey() {
         Employee employee = new Employee();
-        employee.setAge(25);
+        employee.setAge(19);
         employee.setEmail("xiongqi@163.com");
         employee.setGender("1");
-        employee.setLastName("mp");
+        employee.setLastName("tom");
 
         Integer insert = employeeMapper.insert(employee);
 
