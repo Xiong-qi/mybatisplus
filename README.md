@@ -12,3 +12,6 @@ mybatis-plus 与springboot集成
 <h2>二、使用说明</h2>
     将mp.sql在mysql中运行
 
+<h2>三、自动生成器说明</h2>
+在test中运行generatorTests即可
+
